@@ -2,6 +2,7 @@ package Modeller.Calisanlar;
 
 import Modeller.Departmanlar.Departman;
 import Veritabani.Calisanlar;
+import Veritabani.Departmanlar;
 
 public class Calisan {
 
@@ -27,21 +28,23 @@ public class Calisan {
     // departman kodu, buradaki metod (setDepartman) vasıtasıyla departman listesinin tümünü dolaşıp (foreach)
     // getDepartmanKodu() ile bulunan sonuçlardan biriyle aynı mı? Diye bakıyoruz...
     // Aynıysa, "terminalden girilen çalışanı bu departmana set et" demektir...
-    private void setDepartman(String departman) {
+    private void setDepartman(String departmanKodu) {
         // TODO setDepartman() methodunu doldurunuz
+        for (Departman dep : Departmanlar.getDepartmanList()) {
+            if (dep.getDepartmanKodu().equalsIgnoreCase(departmanKodu)) {
+                this.Departman = dep;
+            }
+            //  Terminalden girilen calisanin departman koduna göre, gerekli departman set edilmelidir.
+            //  Çalışan sınıfının Constructor 'ı main'de tanımlı. Program çalıştığında, terminalden gireceğimiz
+            //  departman kodu, buradaki metod (setDepartman) vasıtasıyla departman listesinin tümünü dolaşıp (foreach)
+            //  getDepartmanKodu() ile bulunan sonuçlardan biriyle aynı mı? Diye bakıyoruz...
+            //  Aynıysa, "terminalden girilen çalışanı bu departmana set et" demektir...
+            //  İpucu: Departman listesinin (Veritabani.Departmanlar.DepartmanList) içerisindeki departmanların kodları var,
+            //  bu kodlari donguye tutmak ise yarayabilir.
 
-        //  Terminalden girilen calisanin departman koduna göre, gerekli departman set edilmelidir.
-        //  Çalışan sınıfının Constructor 'ı main'de tanımlı. Program çalıştığında, terminalden gireceğimiz
-        //  departman kodu, buradaki metod (setDepartman) vasıtasıyla departman listesinin tümünü dolaşıp (foreach)
-        //  getDepartmanKodu() ile bulunan sonuçlardan biriyle aynı mı? Diye bakıyoruz...
-        //  Aynıysa, "terminalden girilen çalışanı bu departmana set et" demektir...
-        //  İpucu: Departman listesinin (Veritabani.Departmanlar.DepartmanList) içerisindeki departmanların kodları var,
-        //  bu kodlari donguye tutmak ise yarayabilir.
 
-
-
+        }
     }
-
 
     private void setCalisanId() {
         // TODO setCalisanId() methodunu doldurunuz
