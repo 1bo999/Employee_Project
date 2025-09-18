@@ -27,7 +27,7 @@ public class Calisanlar {
     public static void deleteACalisanWithId(String calisanId) {
 
         // TODO Bir çalışan silmek için gerekli method. deleteACalisanWithId() methodunu doldurunuz
-
+        System.out.println("Çalışanları sil..");
 
 
     }
